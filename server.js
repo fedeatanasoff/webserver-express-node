@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const hbs = require("hbs");
+const puerto = process.env.PORT || 3000;
 require("./hbs/helpers"); // importando helpers
 
 // MIDDLEWARES
@@ -20,4 +21,6 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
-app.listen(3000, () => console.log("escuchando peticiones en el puerto 3000"));
+app.listen(puerto, () =>
+  console.log(`Escuchando peticiones desde el puerto ${puerto}`)
+);
